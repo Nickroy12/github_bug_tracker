@@ -1,5 +1,4 @@
 const loginBtn = document.getElementById('loginSubmit');
-console.log(loginBtn)
 
 loginBtn.addEventListener('click', function(){
    const nameInput = document.getElementById('nameInput');
@@ -21,3 +20,5 @@ if(name === "Nick Roy" && pass ==="admin1234"){
 }
 
 })
+
+

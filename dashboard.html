@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tree Plant</title>
+    <title>GitHub Issues Tracker | Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -37,8 +37,31 @@
         </nav>
     </header>
     <main >
-      
+      <div class="container mx-auto p-4 " >
+        <section class="btn-container flex bg-slate-50 shadow gap-3 p-2 mb-4">
+         <button class="btn btn-primary ">All</button>
+         <button class="btn btn-outline ">Open</button>
+         <button class="btn btn-outline ">Close</button>
+        </section>
+        <section class="flex justify-between bg-slate-50 shadow gap-3 p-2">
+          <div class="count flex items-center gap-5">
+            <img src="image/Aperture.png" alt="Aperture">
+            <div >
+              <h2 class="text-xl font-bold"><span id="issueCount">0</span> Issues</h2>
+              <p>Track and manage your project issues</p>
+            </div>
+
+          </div>
+           <div class="status-bar flex gap-3">
+           <div class="font-bold"><span class="status bg-green-500"></span> Open</div> 
+           <div class="font-bold"><span class="status bg-red-500"></span> Close</div> 
+           </div>
+        </section>
+        <section id="issuContainer" class="grid grid-cols-4 gap-3 p-5">
+
+        </section>
+      </div>
     </main>
-    <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
