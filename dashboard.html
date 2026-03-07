@@ -10,10 +10,29 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header>
-        <nav class="container mx-auto flex justify-between">
-          <div class="logo">
+    <header class="shadow-md">
+        <nav class="container mx-auto flex justify-between py-4 ">
+          <div class="logo flex items-center">
              <i class="fa-brands fa-github  text-5xl"></i>
+              <h2 class="text-xl font-bold ">GitHub Issues Tracker</h2>
+          </div>
+          <div class="flex justify-between">
+            <label class="input">
+  <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="2.5"
+      fill="none"
+      stroke="currentColor"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.3-4.3"></path>
+    </g>
+  </svg>
+  <input type="search" required placeholder="Search" />
+</label>
+<button class="btn btn-primary">Search</button>
           </div>
         </nav>
     </header>
