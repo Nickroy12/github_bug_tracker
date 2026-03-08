@@ -7,5 +7,7 @@
 # 3 What is the difference between map(), filter(), and forEach()?
 ## The map method receives a function as a parameter. Then it applies it on each element and returns an entirely new array populated with the results of calling the provided function. the forEach() method receives a function as an argument and executes it once for each array element. However, instead of returning a new array . Creates a new array with elements that pass a condition.
 
-
+# 4 What is an arrow function?
+## Arrow function is shorter  function of  traditional javascript . it was invented in 2015 with es6 
+## 5 
 
