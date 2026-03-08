@@ -14,7 +14,7 @@ if(pass === ''){
 
 if(name === "Nick Roy" && pass ==="admin1234"){
    alert('Your signing Successful  !')
-   window.location.assign('/dashboard.html')
+   window.location.assign('./dashboard.html')
 }else{
    alert('Something is wrong !')
 }
