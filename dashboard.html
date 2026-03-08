@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header class="shadow-md">
+    <header class="shadow-md sticky top-0 z-10 bg-white">
         <nav class="container mx-auto flex justify-between py-4 ">
           <div class="logo flex items-center">
              <i class="fa-brands fa-github  text-5xl"></i>
@@ -30,9 +30,9 @@
       <path d="m21 21-4.3-4.3"></path>
     </g>
   </svg>
-  <input type="search" required placeholder="Search" />
+  <input type="search" id="searchInput" required placeholder="Search" />
 </label>
-<button class="btn btn-primary">Search</button>
+<button id="searchBtn" class="btn btn-primary">Search</button>
           </div>
         </nav>
     </header>

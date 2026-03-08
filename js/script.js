@@ -6,6 +6,9 @@ const allBtn = document.getElementById("allBtn");
 const openBtn = document.getElementById("openBtn");
 const closeBtn = document.getElementById("closeBtn");
 const buttons = [allBtn, openBtn, closeBtn];
+const searchInput = document.getElementById('searchInput');
+const searchBtn = document.getElementById('searchBtn');
+
 
 
 const loader = (status) =>{
@@ -33,6 +36,18 @@ async function dataFetch(){
     loader(false)
   }
 }
+searchBtn.addEventListener('click', function(){
+
+  const search = searchInput.value.trim().toLowerCase();
+
+  const filteredIssues = allIssues.filter(issue =>
+    issue.title.toLowerCase().includes(search) ||
+    issue.description.toLowerCase().includes(search)
+  );
+
+  dataDisplay(filteredIssues);
+
+})
 function toggleBtn(activeBtn){
     buttons.forEach(btn=>{
         btn.classList.remove("btn-primary");
