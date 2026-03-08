@@ -1,5 +1,12 @@
+ allIssues =[];
 const issueCount = document.getElementById('issueCount');
 const issueContainer = document.getElementById('issuContainer');
+
+const allBtn = document.getElementById("allBtn");
+const openBtn = document.getElementById("openBtn");
+const closeBtn = document.getElementById("closeBtn");
+const buttons = [allBtn, openBtn, closeBtn];
+
 
 const loader = (status) =>{
     if(status === true){
@@ -7,7 +14,7 @@ const loader = (status) =>{
         issueContainer.classList.add('hidden' )
     }else{
           issueContainer.classList.remove('hidden')
-           document.getElementById('spinner').classList.add('hidden' );
+           document.getElementById('spinner').classList.add('hidden' , );
     }
 
 }
@@ -16,7 +23,8 @@ async function dataFetch(){
     loader(true)
     const res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     const data = await res.json();
-    dataDisplay(data.data);
+      allIssues = data.data;
+     dataDisplay(allIssues)
   }
   catch(error){
     console.log("Error:", error)
@@ -25,6 +33,36 @@ async function dataFetch(){
     loader(false)
   }
 }
+function toggleBtn(activeBtn){
+    buttons.forEach(btn=>{
+        btn.classList.remove("btn-primary");
+        btn.classList.add("btn-outline");
+    });
+
+    activeBtn.classList.remove("btn-outline");
+    activeBtn.classList.add("btn-primary");
+}
+allBtn.addEventListener("click", ()=>{
+    toggleBtn(allBtn);
+    dataDisplay(allIssues)
+});
+
+openBtn.addEventListener("click", ()=>{
+   toggleBtn(openBtn);
+   const openIssues = allIssues.filter(issue => issue.status === "open");
+   dataDisplay(openIssues)
+});
+
+closeBtn.addEventListener("click", ()=>{
+    toggleBtn(closeBtn);
+    const closeIssues = allIssues.filter(issue => issue.status === "closed");
+    dataDisplay(closeIssues)
+});
+
+closeBtn.addEventListener("click", ()=>{
+    toggleBtn(closeBtn);
+});
+
 async function modalBox(id){
   const res = await  fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
   const data = await res.json()
@@ -57,7 +95,7 @@ const displayDetails = (issue) =>{
         <p class="font-bold"> ${issue.assignee} </p>
       </div>
       <div class="priority">
-        <span class="rounded-3xl bg-green-500 px-2 text-white font-semibold ">${issue.priority} </span>
+        <span class="rounded-3xl ${issue.priority === 'high'? 'bg-red-400' : issue.priority === 'medium' ? 'bg-amber-400': 'bg-slate-500'  } px-2 text-white font-semibold ">${issue.priority} </span>
       </div>
      </div>`
   
