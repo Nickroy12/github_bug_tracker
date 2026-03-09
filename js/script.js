@@ -131,7 +131,7 @@ const dataDisplay =(data) =>{
   <div class="card-body ${e.status === "open" ? 'border-b-2 border-green-500 rounded-3xl': 'border-b-2 border-red-500 rounded-3xl'}" >
     <div class="flex justify-between">
       <div class="git-status">
-      <img src="${e.status === 'open' ? 'image/Open-status.png' : 'image/Closed-Status.png'}" alt="status">
+      <img src="${e.status === 'open' ? 'image/Open-Status.png' : 'image/Closed-Status.png'}" alt="status">
       </div>
       <div class="gitCondition ${e.priority === 'high'? 'bg-red-400' : e.priority === 'medium' ? 'bg-amber-400': 'bg-slate-500'  } px-5 rounded-3xl">
         ${e.priority}
