@@ -12,7 +12,7 @@ if(pass === ''){
     return alert('Input user Password')
 }
 
-if(name === "Nick Roy" && pass ==="admin1234"){
+if(name === "admin" && pass ==="admin123"){
    alert('Your signing Successful  !')
    window.location.assign('./dashboard.html')
 }else{
